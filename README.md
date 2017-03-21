@@ -1,8 +1,14 @@
 # Douglas
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/douglas`. To experiment with that code, run `bin/console` for an interactive prompt.
+**Status: Under heavy development**
 
-TODO: Delete this and the text above, and describe your gem
+Douglas is a Ruby gem that adds the ability to easily add `created_by`,
+`updated_by` and `deleted_by` (if possible) fields to any ActiveRecord model.
+It allows easy user-stamping for any Active Record model.
+
+Also, it plays nicely with gems that provide soft-deleting features (like
+[paranoia](https://github.com/rubysherpas/paranoia)) by adding a `deleted_by`
+attribute.
 
 ## Installation
 
@@ -16,9 +22,6 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install douglas
 
 ## Usage
 
