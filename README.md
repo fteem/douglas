@@ -34,6 +34,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/douglas. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## Why Douglas?
+
+Named after [Douglas "Doug" **Stamper**](http://house-of-cards.wikia.com/wiki/Doug_Stamper),
+President Frank Underwood's White House Chief of Staff and former director of strategy.
+
+![](http://thediscussion.net/main/wp-content/uploads/2014/08/Doug-n-Brick-S1.gif)
 
 ## License
 
