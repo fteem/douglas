@@ -25,7 +25,36 @@ And then execute:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Built-in generator
+
+When added in a Rails application, Douglas adds a generator which enables the users
+to easily generate migrations which need to be stamped.
+
+To generate these migrations, you can use Douglas' `table` generator:
+
+```
+rails generate douglas:table NAME
+```
+
+This will generate a migration:
+
+```
+create  db/migrate/20170322225126_add_created_by_and_updated_by_to_<model-name>.rb
+```
+
+The contents of this migration will be:
+
+```ruby
+class AddCreatedByAndUpdatedByTo<model-name> < ActiveRecord::Migration[5.0]
+  def change
+    add_column :<model-name>, :created_by, :integer
+    add_column :<model-name>, :updated_by, :integer
+
+    add_index :<model-name>, :created_by
+    add_index :<model-name>, :updated_by
+  end
+end
+```
 
 ## Progress
 
