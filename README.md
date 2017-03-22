@@ -29,7 +29,7 @@ TODO: Write usage instructions here
 
 ## Progress
 
-- [ ] Add migrations generator
+- [x] Add migrations generator (https://github.com/fteem/douglas/pull/1)
 - [ ] Find way to plug-in `Douglas` in model lifecycle
 
 ## Development
