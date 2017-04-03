@@ -73,6 +73,8 @@ end
 - [x] Add migrations generator (https://github.com/fteem/douglas/pull/1)
 - [x] Find way to hijack `current_user` and store in `RequestStore`
 - [ ] Find way to plug-in `Douglas` in model lifecycle
+- [ ] Make it work with Rails.version < 3.2
+- [ ] Make logged attribute (currently `id`) to be configurable
 
 ## Development
 
