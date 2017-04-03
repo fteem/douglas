@@ -12,3 +12,7 @@ module Douglas
     end
   end
 end
+
+if defined?(::Rails) && ActiveRecord::VERSION::STRING >= '3.2'
+  require 'douglas/frameworks/rails'
+end
