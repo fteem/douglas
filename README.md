@@ -58,9 +58,20 @@ class AddCreatedByAndUpdatedByTo<model-name> < ActiveRecord::Migration[5.0]
 end
 ```
 
+### Plug it into a controller
+
+In your `ApplicationController` add a `before_action`:
+
+```ruby
+class ApplicationController
+  before_action :set_douglas_the_stamper
+end
+```
+
 ## Progress
 
 - [x] Add migrations generator (https://github.com/fteem/douglas/pull/1)
+- [x] Find way to hijack `current_user` and store in `RequestStore`
 - [ ] Find way to plug-in `Douglas` in model lifecycle
 
 ## Development
