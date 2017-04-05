@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['ileeftimov@gmail.com']
 
   spec.summary       = 'Douglas adds stamps to any ActiveRecord model'
-  spec.description   = 'Douglas adds stamps to any ActiveRecord model, like {created,updated,deleted}_by'
+  spec.description   = 'Douglas adds stamps to any ActiveRecord model, like {created,updated}_by'
   spec.homepage      = 'https://github.com/fteem/douglas'
   spec.license       = 'MIT'
 
