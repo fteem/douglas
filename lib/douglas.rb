@@ -1,5 +1,6 @@
 require 'request_store'
 require 'douglas/version'
+require 'douglas/model'
 
 module Douglas
   class << self
