@@ -3,7 +3,7 @@ require 'rails/generators/active_record'
 module Douglas
   module Generators
     class TableGenerator < ::Rails::Generators::NamedBase
-      include Rails::Generators::Migration
+      include ::Rails::Generators::Migration
 
       source_root File.expand_path('../templates', __FILE__)
       desc 'Create migration for for a table that should be stamped'
@@ -19,12 +19,12 @@ module Douglas
 
       def migration_version
         if rails5?
-          "[#{Rails::VERSION::MAJOR}.#{Rails::VERSION::MINOR}]"
+          "[#{::Rails::VERSION::MAJOR}.#{::Rails::VERSION::MINOR}]"
         end
       end
 
       def rails5?
-        Rails.version.start_with? '5'
+        ::Rails.version.start_with? '5'
       end
     end
   end
