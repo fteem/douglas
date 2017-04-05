@@ -4,13 +4,9 @@
 
 **Status: Under heavy development**
 
-Douglas is a Ruby gem that adds the ability to easily add `created_by`,
-`updated_by` and `deleted_by` (if possible) fields to any ActiveRecord model.
+Douglas is a Ruby gem that adds the ability to easily add `created_by` and
+`updated_by` attributes to any ActiveRecord model.
 It allows easy user-stamping for any Active Record model.
-
-Also, it plays nicely with gems that provide soft-deleting features (like
-[paranoia](https://github.com/rubysherpas/paranoia)) by adding a `deleted_by`
-attribute.
 
 ## Installation
 
@@ -68,13 +64,45 @@ class ApplicationController
 end
 ```
 
+This will enable `Douglas` to know the current user that peroforms the action (create/update) on an model object.
+
+### Use it in models
+
+In the model (that you ran the generate task for), add this:
+
+```ruby
+class User < ApplicationRecord
+  has_stamps
+end
+```
+
+This will populat the `created_by` and `updated_by` attributes accordintly. Under
+the hood this injects callbacks that are executed before create and update.
+
+### Use it in console
+
+Since the `{created,updated}_by` columns cannot be `null` it means that the `Douglas.the_stamper` has to always be set to a value. This is normally done via the controller `before_filter` method, but in console you have to use the `Douglas.with_stamper` method. This method expects two arguments, an identifier of the user that does the action and a block. This means that the user will be logged as the person that has done the actions within the block.
+
+For example:
+
+```
+>> Douglas.with_stamper(123) do
+?>   p = Post.first
+>>   p.body = 'Lorem ipsum dolor sit amet''
+>>   p.save
+>> end
+```
+
+The `Post` will be updated, and the `updated_by` attribute will be set to the first passed argument - `123`.
+
 ## Progress
 
 - [x] Add migrations generator (https://github.com/fteem/douglas/pull/1)
 - [x] Find way to hijack `current_user` and store in `RequestStore`
-- [ ] Find way to plug-in `Douglas` in model lifecycle
+- [x] Find way to plug-in `Douglas` in model lifecycle
 - [ ] Make it work with Rails.version < 3.2
 - [ ] Make logged attribute (currently `id`) to be configurable
+- [ ] Add `deleted_by` attribute?
 
 ## Development
 

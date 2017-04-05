@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
 
-  spec.add_dependency 'railties', '>= 4.0.0', '< 6.0'
-  spec.add_dependency 'request_store', '~> 1.3.2'
+  spec.add_runtime_dependency 'activerecord', '>= 4.0.0', '< 5.1'
+  spec.add_runtime_dependency 'request_store', '~> 1.3.2'
 end
