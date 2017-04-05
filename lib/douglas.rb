@@ -11,6 +11,14 @@ module Douglas
     def the_stamper= user
       RequestStore.store[:the_stamper] = user
     end
+
+    def with_stamper user
+      return unless block_given?
+
+      self.the_stamper = user
+      yield
+      self.the_stamper = nil
+    end
   end
 end
 
