@@ -1,0 +1,40 @@
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - lib/generators/douglas/templates/**/*
+
+Metrics/ClassLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
+
+Style/Documentation:
+  Enabled: False
+
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    "%w": "[]"
+    "%W": "[]"
+    "%i": "[]"
+    "%I": "[]"
+
+Style/RaiseArgs:
+  EnforcedStyle: compact
+
+Style/SpaceInsideBlockBraces:
+  EnforcedStyleForEmptyBraces: space
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
