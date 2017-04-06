@@ -22,9 +22,8 @@ module Douglas
       end
 
       def migration_version
-        if rails5?
-          "[#{::Rails::VERSION::MAJOR}.#{::Rails::VERSION::MINOR}]"
-        end
+        return unless rails5?
+        "[#{::Rails::VERSION::MAJOR}.#{::Rails::VERSION::MINOR}]"
       end
 
       def rails5?
