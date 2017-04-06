@@ -8,11 +8,11 @@ module Douglas
       RequestStore.store[:the_stamper]
     end
 
-    def the_stamper= user
+    def the_stamper=(user)
       RequestStore.store[:the_stamper] = user
     end
 
-    def with_stamper user
+    def with_stamper(user)
       return unless block_given?
 
       self.the_stamper = user

@@ -14,13 +14,16 @@ module Douglas
       end
 
       def copy_douglas_migration
-        migration_template 'migration.rb', "db/migrate/add_created_by_and_updated_by_to_#{table_name}.rb", migration_version: migration_version
+        migration_template(
+          'migration.rb',
+          "db/migrate/add_created_by_and_updated_by_to_#{table_name}.rb",
+          migration_version: migration_version
+        )
       end
 
       def migration_version
-        if rails5?
-          "[#{::Rails::VERSION::MAJOR}.#{::Rails::VERSION::MINOR}]"
-        end
+        return unless rails5?
+        "[#{::Rails::VERSION::MAJOR}.#{::Rails::VERSION::MINOR}]"
       end
 
       def rails5?
